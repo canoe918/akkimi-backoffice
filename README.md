@@ -1,6 +1,6 @@
 # 아끼미 백오피스
 
-## 에어테이블 환경설정
+## [에어테이블](https://airtable.com/workspaces) 환경설정
 
 ```bash
 accessToken: backoffice
