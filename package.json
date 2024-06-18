@@ -10,6 +10,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "airtable": "nest start airtable",
     "airtable:dev": "nest --watch start airtable",
+    "airtable:prod": "node dist/apps/airtable/main",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
