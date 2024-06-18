@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/airtable/src/main.ts",
+      "src": "dist/apps/airtable/main.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "apps/airtable/src/main.ts",
+      "dest": "dist/apps/airtable/main.js",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]
