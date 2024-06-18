@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import * as Airtable from 'airtable';
+import Airtable from 'airtable';
 import { AppModule } from './app.module';
 
 async function bootstrap() {

@@ -1,7 +1,10 @@
-import { IsDate, IsEnum, IsString, IsUrl } from 'class-validator';
+import { IsDate, IsEnum, IsNumber, IsString, IsUrl } from 'class-validator';
 import { TODO_STATUS } from '../../constants/enum';
 
 export class TodoTableDto {
+  @IsNumber()
+  priority: number;
+
   @IsEnum(TODO_STATUS)
   status: string;
 
