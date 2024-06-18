@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import Airtable from 'airtable';
+import { TABLE_KEYS } from 'apps/airtable/src/constants/keys';
+import { TodoTableDto } from 'apps/airtable/src/dto/todo/todo.dto';
 import camelCase from 'lodash/camelCase';
-import { TABLE_KEYS } from './constants/keys';
-import { TodoTableDto } from './dto/todo/todo.dto';
 
 @Injectable()
 export class AppService {
