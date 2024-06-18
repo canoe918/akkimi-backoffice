@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import Airtable from 'airtable';
 import { TABLE_KEYS } from 'apps/airtable/src/constants/keys';
-import { TodoTableDto } from 'apps/airtable/src/dto/todo/todo.dto';
+
 import camelCase from 'lodash/camelCase';
+import { ChallengeTableDto } from './dto/challenge/challenge.dto';
 
 @Injectable()
 export class AppService {
@@ -12,7 +13,7 @@ export class AppService {
     this.airtable = new Airtable();
   }
 
-  async getTodoList(): Promise<TodoTableDto[]> {
+  async getChallengeList(): Promise<ChallengeTableDto[]> {
     const base = this.airtable.base(process.env.AIRTABLE_BO_BASE_ID);
     const table = await base.table(TABLE_KEYS.TODO).select().all();
 
@@ -24,7 +25,7 @@ export class AppService {
           camelCaseObject[camelCase(key)] = value;
         });
 
-        return camelCaseObject as TodoTableDto;
+        return camelCaseObject as ChallengeTableDto;
       })
       .sort((a, b) => a.priority - b.priority);
   }
